@@ -3,6 +3,10 @@ function Player(name) {
 	this.name = name;
 }
 
+var player1Wins = 0;
+var player2Wins = 0;
+
+
 function Game(player1, player2) {
 	this.player1 = player1;
 	this.player2 = player2;
@@ -12,15 +16,21 @@ Player.prototype.picks = function(pick) {
 	this.pick = pick;
 }
 
-Game.prototype.winner = function(player1, player2) {
+// Player.prototype.choices = ["rock","paper","scissors","lizard","spock"];
+
+Game.prototype.winner = function(player1, player2){
 	if (this.isSamePick()) return null;
 
-	if (this.PAIRS[this.player1.pick]["beats"] === this.player2.pick){
- 		return this.player1;
- 	} else {
- 		return this.player2;
- 	}
+	if (this.PAIRS[this.player1.pick+""+this.player2.pick] !== undefined){ 
+		player1Wins++;
+		return this.player1.pick+" "+this.PAIRS[this.player1.pick+""+this.player2.pick]+" "+this.player2.pick;
+	} 
+	else { 
+		player2Wins++;
+		return this.player2.pick+" "+this.PAIRS[this.player2.pick+"_"+this.player1.pick]+" "+this.player1.pick;
+	}
 }
+
 
  Game.prototype.PAIRS =  {
 
