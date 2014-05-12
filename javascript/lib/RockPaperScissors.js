@@ -27,7 +27,7 @@ Game.prototype.winner = function(player1, player2){
 	} 
 	else { 
 		player2Wins++;
-		return this.player2.pick+" "+this.PAIRS[this.player2.pick+"_"+this.player1.pick]+" "+this.player1.pick;
+		return this.player2.pick+" "+this.PAIRS[this.player2.pick+""+this.player1.pick]+" "+this.player1.pick;
 	}
 }
 
