@@ -35,7 +35,6 @@ console.log(this.player2.name + "has" + player2Wins);
 
 
 
-
  Game.prototype.PAIRS =  {
 
 	"scissorspaper"  : "cuts",       //Scissors cuts paper
