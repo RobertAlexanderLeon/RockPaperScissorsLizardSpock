@@ -19,7 +19,7 @@ Player.prototype.picks = function(pick) {
 // Player.prototype.choices = ["rock","paper","scissors","lizard","spock"];
 
 Game.prototype.winner = function(player1, player2){
-	if (this.isSamePick()) return null;
+	if (this.isSamePick()) return "It's a draw!";
 
 	if (this.PAIRS[this.player1.pick+""+this.player2.pick] !== undefined){ 
 		player1Wins++;
@@ -29,7 +29,11 @@ Game.prototype.winner = function(player1, player2){
 		player2Wins++;
 		return this.player2.pick+" "+this.PAIRS[this.player2.pick+""+this.player1.pick]+" "+this.player1.pick;
 	}
+console.log(this.player1.name + "has" + player1Wins);
+console.log(this.player2.name + "has" + player2Wins);
 }
+
+
 
 
  Game.prototype.PAIRS =  {
